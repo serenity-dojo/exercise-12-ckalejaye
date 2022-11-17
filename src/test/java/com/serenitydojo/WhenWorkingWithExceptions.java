@@ -24,8 +24,10 @@ public class WhenWorkingWithExceptions {
     @Test
     public void workingWithDeclaredExceptions() throws IOException {
         FileLoader fileLoader = new FileLoader();
-        assertThat(fileLoader.readHelloWorld()).isEqualTo("Hello World");
+        String contentInFile = fileLoader.readHelloWorld("src/main/resources/hello.txt");
+        assertThat(contentInFile).isEqualTo("Hello World");
     }
+
 
     /**
      * Exercise 2 - Catching exceptions
